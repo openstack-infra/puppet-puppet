@@ -148,6 +148,13 @@ class puppet (
     replace => true,
   }
 
+  # properly install package if not present
+  if ! defined(Package[puppet]) {
+    package { 'puppet':
+      ensure => latest,
+    }
+  }
+
   # start puppet depending on settings
   if $enable_puppet != false {
     service { 'puppet':
