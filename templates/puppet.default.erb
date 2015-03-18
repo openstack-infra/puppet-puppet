@@ -3,7 +3,7 @@
 # Enable puppet agent service?
 # Setting this to "yes" allows the puppet agent service to run.
 # Setting this to "no" keeps the puppet agent service from running.
-START=<%- if @enable_puppet == true-%>YES<%-else-%>NO<%-end%>
+START=<%- if @enable_puppet == true-%>yes<%-else-%>no<%-end%>
 
 # Startup options
 DAEMON_OPTS=""
