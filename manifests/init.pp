@@ -71,6 +71,11 @@ class puppet (
   # Which Puppet do I take?
   # Take $pin_puppet and pin to that version
   if ($::osfamily == 'Debian') {
+    # check version - trusty only has puppet 3
+    if ($::lsbdistcodename == 'trusty') and ($pin_puppet == '2.7.') {
+      fail("Puppet 2.7 version not supported")
+    }
+
     apt::source { 'puppetlabs':
       location   => 'http://apt.puppetlabs.com',
       repos      => 'main',
