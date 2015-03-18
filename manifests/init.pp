@@ -121,7 +121,7 @@ class puppet (
       owner   => 'root',
       group   => 'root',
       mode    => '0444',
-      source  => 'puppet:///modules/puppet/centos-puppetlabs.repo',
+      source  => template('puppet/centos-puppetlabs.repo.erb'),
       replace => true,
     }
     file { '/etc/yum.conf':
