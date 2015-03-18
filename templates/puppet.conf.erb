@@ -1,0 +1,49 @@
+[main]
+logdir=/var/log/puppet
+vardir=/var/lib/puppet
+ssldir=/var/lib/puppet/ssl
+rundir=/var/run/puppet
+<% if @pin_puppet.to_f < 3 %>
+factpath=$vardir/lib/facter
+templatedir=$confdir/templates
+<% end %>
+
+<% if @puppet_ca_server -%>
+ca_server=<%= @puppet_ca_server %>
+<% end -%>
+
+<% if @dns_alt_names -%>
+dns_alt_names=<%= @dns_alt_names %>
+<% end -%>
+
+server=<%= @puppetmaster_server %>
+certname=<%= @certname %>
+pluginsync=true
+
+[master]
+# These are needed when the puppetmaster is run by passenger
+# and can safely be removed if webrick is used.
+ssl_client_header = SSL_CLIENT_S_DN
+ssl_client_verify_header = SSL_CLIENT_VERIFY
+
+environmentpath=<%= @environment_path %>
+environmenttimeout = <%= @environment_timeout %>
+
+reports=<%= @reports %>
+storeconfigs = <%= @store_configs %>
+storeconfigs_backend = <%= @store_backend %>
+basemodulepath = <%= @basemodule_path %>
+<% if @ca_server -%>
+ca=false
+ca_server = <%= @ca_server %>
+<% end -%>
+
+[agent]
+report=true
+splay = true
+runinterval = <%= @agent_runinterval %>
+
+<% if @agent_http_proxy_host -%>
+http_proxy_host=<%= @agent_http_proxy_host %>
+http_proxy_port=<%= @agent_http_proxy_port %>
+<% end %>
