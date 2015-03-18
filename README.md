@@ -1,4 +1,4 @@
-# Generic Set proxy Module
+# OpenStack Puppet Module
 
 ## Overview
 
