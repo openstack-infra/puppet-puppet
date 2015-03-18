@@ -115,7 +115,12 @@ class puppet (
 
   }
 
-  if ($::operatingsystem == 'CentOS') {
+  if ($::osfamily == 'RedHat') {
+    # check version - 7 only has puppet 3
+    if ($::operatingsystemmajrelease == 7) and ($pin_puppet == '2.7.') {
+      fail("Puppet 2.7 version not supported")
+    }
+
     file { '/etc/yum.repos.d/puppetlabs.repo':
       ensure  => present,
       owner   => 'root',
