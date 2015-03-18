@@ -33,6 +33,7 @@ class puppet (
   $store_backend         = 'puppetdb',
   $reports               = 'store,puppetdb',
   $agent_runinterval     = 600,
+  $puppet_release        = $::lsbdistcodename,
 ) {
 
   # pin facter and puppetdb according to puppet version
@@ -144,12 +145,14 @@ class puppet (
   # start puppet depending on settings
   if $enable_puppet != false {
     service { 'puppet':
-      ensure => started,
+      ensure => running,
+      enable => true,
     }
   }
   else {
     service { 'puppet':
       ensure => stopped,
+      enable => false,
     }
  }
 }
