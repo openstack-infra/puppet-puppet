@@ -24,7 +24,6 @@ class puppet (
   $certname              = $::fqdn,
   $puppetmaster_server   = 'puppetmaster.openstack.org',
   $puppet_ca_server      = undef,
-  $ca_server             = undef,
   $dns_alt_names         = undef,
   $environment_path      = '/etc/puppet/environments',
   $basemodule_path       = '/etc/puppet/modules',
