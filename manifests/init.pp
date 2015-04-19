@@ -46,7 +46,7 @@ class puppet (
       $pin_puppetdb = '2.'
     }
     default: {
-      fail('Puppet version not supported')
+      fail("Puppet version ${pin_puppet} not supported")
     }
   }
 
