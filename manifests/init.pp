@@ -46,7 +46,7 @@ class puppet (
       $pin_puppetdb = '2.'
     }
     default: {
-      fail("Puppet version not supported")
+      fail('Puppet version not supported')
     }
   }
 
@@ -72,7 +72,7 @@ class puppet (
   if ($::osfamily == 'Debian') {
     # check version - trusty only has puppet 3
     if ($::lsbdistcodename == 'trusty') and ($pin_puppet == '2.7.') {
-      fail("Puppet 2.7 version not supported")
+      fail('Puppet 2.7 version not supported')
     }
 
     apt::source { 'puppetlabs':
@@ -122,7 +122,7 @@ class puppet (
   if ($::osfamily == 'RedHat') {
     # check version - 7 only has puppet 3
     if ($::operatingsystemmajrelease == 7) and ($pin_puppet == '2.7.') {
-      fail("Puppet 2.7 version not supported")
+      fail('Puppet 2.7 version not supported')
     }
 
     file { '/etc/yum.repos.d/puppetlabs.repo':
@@ -130,7 +130,7 @@ class puppet (
       owner   => 'root',
       group   => 'root',
       mode    => '0444',
-      content  => template('puppet/centos-puppetlabs.repo.erb'),
+      content => template('puppet/centos-puppetlabs.repo.erb'),
       replace => true,
     }
     file { '/etc/yum.conf':
@@ -171,6 +171,6 @@ class puppet (
       ensure => stopped,
       enable => false,
     }
- }
+  }
 }
 

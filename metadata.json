@@ -1,5 +1,5 @@
 {
-  "name": "openstackci-puppet",
+  "name": "openstackinfra-puppet",
   "version": "0.0.1",
   "author": "OpenStack CI",
   "summary": "Puppet module to install and configure Puppet",
