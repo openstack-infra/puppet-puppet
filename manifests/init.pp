@@ -165,8 +165,7 @@ class puppet (
       ensure => running,
       enable => true,
     }
-  }
-  else {
+  } else {
     service { 'puppet':
       ensure => stopped,
       enable => false,
