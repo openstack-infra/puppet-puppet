@@ -13,14 +13,9 @@ group :development, :test do
 
   # Puppet 4.x related lint checks
   gem 'puppet-lint-unquoted_string-check'
-  # Empty string changed to mean "true" in puppet 4. While it's ok to
-  # assign the empty string to a variable, if that variable is checked
-  # with if $variable instead of if $variable == '', it'll be an opposite
-  # behavior. However, the check is too violated by us to use right now.
   gem 'puppet-lint-empty_string-check'
   gem 'puppet-lint-leading_zero-check'
   gem 'puppet-lint-variable_contains_upcase'
-  gem 'puppet-lint-numericvariable'
   gem 'puppet-lint-spaceship_operator_without_tag-check'
   gem 'puppet-lint-undef_in_function-check'
 
