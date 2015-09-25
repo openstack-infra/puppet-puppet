@@ -33,6 +33,8 @@ class puppet (
   $reports               = 'store,puppetdb',
   $agent_runinterval     = 600,
   $puppet_release        = $::lsbdistcodename,
+  $is_master             = false,
+  $is_agent              = true,
 ) {
 
   # pin facter and puppetdb according to puppet version
