@@ -20,6 +20,7 @@ server=<%= @puppetmaster_server %>
 certname=<%= @certname %>
 pluginsync=true
 
+<% if @is_master != '' -%>
 [master]
 # These are needed when the puppetmaster is run by passenger
 # and can safely be removed if webrick is used.
@@ -33,7 +34,7 @@ reports=<%= @reports %>
 storeconfigs = <%= @store_configs %>
 storeconfigs_backend = <%= @store_backend %>
 basemodulepath = <%= @basemodule_path %>
-
+<% else -%>
 [agent]
 report=true
 splay = true
@@ -42,4 +43,5 @@ runinterval = <%= @agent_runinterval %>
 <% if @agent_http_proxy_host -%>
 http_proxy_host=<%= @agent_http_proxy_host %>
 http_proxy_port=<%= @agent_http_proxy_port %>
+<% end %>
 <% end %>
