@@ -8,11 +8,11 @@ factpath=$vardir/lib/facter
 templatedir=$confdir/templates
 <% end %>
 
-<% if @puppet_ca_server -%>
+<% if @puppet_ca_server != '' -%>
 ca_server=<%= @puppet_ca_server %>
 <% end -%>
 
-<% if @dns_alt_names -%>
+<% if @dns_alt_names != '' -%>
 dns_alt_names=<%= @dns_alt_names %>
 <% end -%>
 
@@ -39,7 +39,7 @@ report=true
 splay = true
 runinterval = <%= @agent_runinterval %>
 
-<% if @agent_http_proxy_host -%>
+<% if @agent_http_proxy_host != '' -%>
 http_proxy_host=<%= @agent_http_proxy_host %>
 http_proxy_port=<%= @agent_http_proxy_port %>
 <% end %>
