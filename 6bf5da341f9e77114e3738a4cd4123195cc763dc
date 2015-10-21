@@ -1,0 +1,11 @@
+Code-Review+2: Monty Taylor <mordred@inaugust.com>
+Verified+2: Jenkins
+Code-Review+2: Spencer Krum <nibz@spencerkrum.com>
+Workflow+1: Spencer Krum <nibz@spencerkrum.com>
+Code-Review+1: Ramy Asselin <ramy.asselin@hpe.com>
+Code-Review+1: Glauco Oliveira <gvinici@thoughtworks.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 21 Oct 2015 03:32:37 +0000
+Reviewed-on: https://review.openstack.org/227880
+Project: openstack-infra/puppet-puppet
+Branch: refs/heads/master
