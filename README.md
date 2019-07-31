@@ -1,5 +1,3 @@
-# OpenStack Puppet Module
+# This repo has moved to OpenDev
 
-## Overview
-
-Module to install and configure puppet services.
+It can now be found at [https://opendev.org/opendev/puppet-puppet](https://opendev.org/opendev/puppet-puppet)
